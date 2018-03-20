@@ -120,7 +120,7 @@ static NSString *const UIViewDebugBorderColorKey = @"DBDebugToolkit_debugBorderC
         __block IMP originalDeallocIMP = [self replaceMethodWithSelector:NSSelectorFromString(@"dealloc")
                                                                    block:^(__unsafe_unretained UIView *blockSelf) {
                                                                        [[NSNotificationCenter defaultCenter] removeObserver:blockSelf];
-                                                                       ((void (*)(id, SEL))originalDeallocIMP)(blockSelf, NSSelectorFromString(@"dealloc"));
+//                                                                        ((void (*)(id, SEL))originalDeallocIMP)(blockSelf, NSSelectorFromString(@"dealloc"));
                                                                    }];
     });
 }
